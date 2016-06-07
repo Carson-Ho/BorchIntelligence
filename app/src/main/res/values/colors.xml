@@ -7,6 +7,7 @@
     <color name="colorBackground">#ffe30e</color>
     <color name="colorAccent">#ffe30e</color>
     <color name="colorRecommend">#fff3a4</color>
+    <color name="colorRecomme">#f0f0f0</color>
 
 
 </resources>
