@@ -4,15 +4,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <RelativeLayout
+        android:id="@+id/yellowBackground"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x314"
+        android:background="@color/colorBackground">
+
     <Button
         android:id="@+id/Button1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="48.4dp"
+        android:layout_marginTop="@dimen/x43"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/guide"
         />
+    </RelativeLayout>
 
+    <RelativeLayout
+        android:id="@+id/blackBackground"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/yellowBackground"
+        android:layout_height="@dimen/x24"
+        android:background="@color/colorRecommend">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="—————— 商品推荐 ——————"
+            android:textSize="@dimen/x15"
+            android:textColor="@color/color_default"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/Recommend"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/blackBackground"
+        android:layout_height="@dimen/x128"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="商品的图片"
+            />
+
+    </RelativeLayout>
 
 
 
