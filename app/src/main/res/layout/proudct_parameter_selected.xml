@@ -6,7 +6,7 @@
     <RelativeLayout
         android:id="@+id/title1"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/x65"
+        android:layout_height="@dimen/x43"
         android:background="@color/colorBackground"
     >
 
@@ -55,10 +55,51 @@
         android:textSize="@dimen/x16"
         android:textColor="@color/colorTab_selected"/>
 
+    <RelativeLayout
+        android:id="@+id/line"
+        android:layout_below="@+id/title1"
+        android:layout_marginTop="@dimen/x75"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorline"
+        >
+    </RelativeLayout>
 
+
+    <RelativeLayout
+        android:id="@+id/choese1"
+        android:layout_below="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y31">
+
+
+        <TextView
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/parameter_productType"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter1"/>
+
+
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x116"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请选择"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter2"/>
 
 
     </RelativeLayout>
+
+</RelativeLayout>
 
 
 

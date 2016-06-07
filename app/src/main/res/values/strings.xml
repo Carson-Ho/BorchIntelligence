@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">Borch Intelligence</string>
+    <string name="parameter_default1">请选择</string>
+    <string name="parameter_productType">类型</string>
+    <string name="parameter_crumble">回收/破碎料</string>
+    <string name="parameter_CaCo3">CaCo3</string>
+    <string name="parameter_fiberglass">玻纤</string>
+    <string name="parameter_fireproofing">防火/助燃</string>
+    <string name="parameter_color">颜色</string>
+    <string name="parameter_productWeight">重量</string>
+    <string name="parameter_wallThickness">壁厚</string>
+    <string name="parameter_productLength">长</string>
+    <string name="parameter_productWidth">宽</string>
+    <string name="parameter_productHeight">高</string>
+    <string-array name="spinnername">
+
+        <item>电子电器零件</item>
+        <item>建筑材料 </item>
+        <item>医疗器械</item>
+        <item>家用五金</item>
+        <item>食用器皿</item>
+        <item>交通器材</item>
+        <item>运动器材</item>
+        <item>文具用品</item>
+        <item>照明设备</item>
+        <item>家电产品</item>
+        <item>包装材料</item>
+        <item>办公器具</item>
+        <item>光学用品</item>
+    </string-array>
 </resources>
