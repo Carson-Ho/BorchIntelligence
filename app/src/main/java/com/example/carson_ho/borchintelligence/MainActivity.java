@@ -21,9 +21,9 @@ public class MainActivity extends FragmentActivity implements
 
     private FragmentTabHost mTabHost;
     private LayoutInflater layoutInflater;
-    private Class fragmentArray[] = { Fragment1.class, Fragment2.class };
-    private int imageViewArray[] = { R.drawable.tab_home_btn, R.drawable.tab_view_btn };
-    private String textViewArray[] = { "首页", "分类"};
+    private Class fragmentArray[] = {Fragment1.class, Fragment2.class};
+    private int imageViewArray[] = {R.drawable.tab_home_btn, R.drawable.tab_view_btn};
+    private String textViewArray[] = {"首页", "分类"};
     private List<Fragment> list = new ArrayList<Fragment>();
     private ViewPager vp;
 
@@ -35,7 +35,7 @@ public class MainActivity extends FragmentActivity implements
         initPage();//初始化页面
     }
 
-//    控件初始化控件
+    //    控件初始化控件
     private void initView() {
         vp = (ViewPager) findViewById(R.id.pager);
         /*ViewPager实现OnPageChangeListener监听器,目的是为了让ViewPager滑动的时候能够带着底部菜单联动*/

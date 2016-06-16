@@ -14,11 +14,11 @@ public class MyFragmentAdapter extends FragmentPagerAdapter {
     List<Fragment> list;
 
 
-
-    public MyFragmentAdapter(FragmentManager fm,List<Fragment> list) {
+    public MyFragmentAdapter(FragmentManager fm, List<Fragment> list) {
         super(fm);
-        this.list=list;
+        this.list = list;
     }//写构造方法，方便赋值调用
+
     @Override
     public Fragment getItem(int arg0) {
         return list.get(arg0);

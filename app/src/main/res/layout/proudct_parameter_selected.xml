@@ -90,7 +90,7 @@
             android:id="@+id/text2"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/x116"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="请选择"
             android:textSize="@dimen/x14"
@@ -98,6 +98,227 @@
 
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/choese2"
+        android:layout_below="@+id/choese1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y31">
+
+
+        <TextView
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/parameter_material"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter1"/>
+
+
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x116"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="请选择"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter2"/>
+
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/choese3"
+        android:layout_below="@+id/choese2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y31">
+
+
+        <TextView
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/parameter_crumble"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter1"/>
+
+
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x116"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="请选择"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter2"/>
+
+
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/choese4"
+        android:layout_below="@+id/choese3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y31">
+
+
+        <TextView
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/parameter_CaCo3"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter1"/>
+
+
+
+        <TextView
+            android:id="@+id/text5"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x116"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="请选择"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter2"/>
+
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/choese5"
+        android:layout_below="@+id/choese4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y31">
+
+
+        <TextView
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/parameter_fiberglass"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter1"/>
+
+
+
+        <TextView
+            android:id="@+id/text6"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x116"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="请选择"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter2"/>
+
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/choese6"
+        android:layout_below="@+id/choese5"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y31">
+
+
+        <TextView
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/parameter_fireproofing"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter1"/>
+
+
+
+        <TextView
+            android:id="@+id/text7"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x116"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="请选择"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter2"/>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/choese7"
+        android:layout_below="@+id/choese6"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y31">
+
+
+        <TextView
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/parameter_color"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter1"/>
+
+
+
+        <TextView
+            android:id="@+id/text8"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x116"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="请选择"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter2"/>
+
+
+    </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_next1"
+            android:layout_below="@+id/choese7"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/x20"
+            android:layout_width="@dimen/x277"
+            android:layout_height="@dimen/y27"
+            android:text="下一步"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/color_default"
+            android:background="@color/colorBackground"/>
+
 
 </RelativeLayout>
 

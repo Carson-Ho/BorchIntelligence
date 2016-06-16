@@ -2,6 +2,7 @@
     <string name="app_name">Borch Intelligence</string>
     <string name="parameter_default1">请选择</string>
     <string name="parameter_productType">类型</string>
+    <string name="parameter_material">原料</string>
     <string name="parameter_crumble">回收/破碎料</string>
     <string name="parameter_CaCo3">CaCo3</string>
     <string name="parameter_fiberglass">玻纤</string>
