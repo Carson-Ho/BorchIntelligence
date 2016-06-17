@@ -8,11 +8,12 @@
     <string name="parameter_fiberglass">玻纤</string>
     <string name="parameter_fireproofing">防火/助燃</string>
     <string name="parameter_color">颜色</string>
-    <string name="parameter_productWeight">重量</string>
-    <string name="parameter_wallThickness">壁厚</string>
-    <string name="parameter_productLength">长</string>
-    <string name="parameter_productWidth">宽</string>
-    <string name="parameter_productHeight">高</string>
+    <string name="parameter_productWeight">重量(g)</string>
+    <string name="parameter_wallThickness">壁厚(mm)</string>
+    <string name="parameter_productSize">制品尺寸</string>
+    <string name="parameter_productLength">长(mm)</string>
+    <string name="parameter_productWidth">宽(mm)</string>
+    <string name="parameter_productHeight">高(mm)</string>
     <string-array name="spinnername">
 
         <item>电子电器零件</item>

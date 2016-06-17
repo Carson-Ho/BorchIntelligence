@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -46,19 +47,34 @@
 
 
     <TextView
+        android:id="@+id/title2"
         android:layout_below="@+id/process1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/y10"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:text="请选择塑料制品参数"
         android:textSize="@dimen/x16"
         android:textColor="@color/colorTab_selected"/>
 
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/title2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y260">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y260"
+            >
+
+
     <RelativeLayout
         android:id="@+id/line"
-        android:layout_below="@+id/title1"
-        android:layout_marginTop="@dimen/x75"
+        android:layout_marginTop="@dimen/y10"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/colorline"
@@ -92,7 +108,7 @@
             android:layout_marginLeft="@dimen/x116"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="请选择"
+            android:hint="请选择"
             android:textSize="@dimen/x14"
             android:textColor="@color/colorparameter2"/>
 
@@ -105,6 +121,13 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/y31">
 
+        <RelativeLayout
+            android:id="@+id/line2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorline"
+            >
+        </RelativeLayout>
 
         <TextView
 
@@ -125,7 +148,7 @@
             android:layout_marginLeft="@dimen/x116"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="请选择"
+            android:hint="请选择"
             android:textSize="@dimen/x14"
             android:textColor="@color/colorparameter2"/>
 
@@ -140,6 +163,13 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/y31">
 
+        <RelativeLayout
+            android:id="@+id/line3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorline"
+            >
+        </RelativeLayout>
 
         <TextView
 
@@ -160,7 +190,7 @@
             android:layout_marginLeft="@dimen/x116"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="请选择"
+            android:hint="请选择"
             android:textSize="@dimen/x14"
             android:textColor="@color/colorparameter2"/>
 
@@ -176,6 +206,13 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/y31">
 
+        <RelativeLayout
+            android:id="@+id/line4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorline"
+            >
+        </RelativeLayout>
 
         <TextView
 
@@ -196,7 +233,7 @@
             android:layout_marginLeft="@dimen/x116"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="请选择"
+            android:hint="请选择"
             android:textSize="@dimen/x14"
             android:textColor="@color/colorparameter2"/>
 
@@ -210,6 +247,14 @@
         android:layout_below="@+id/choese4"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y31">
+
+        <RelativeLayout
+            android:id="@+id/line5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorline"
+            >
+        </RelativeLayout>
 
 
         <TextView
@@ -231,7 +276,7 @@
             android:layout_marginLeft="@dimen/x116"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="请选择"
+            android:hint="请选择"
             android:textSize="@dimen/x14"
             android:textColor="@color/colorparameter2"/>
 
@@ -245,6 +290,14 @@
         android:layout_below="@+id/choese5"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y31">
+
+        <RelativeLayout
+            android:id="@+id/line6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorline"
+            >
+        </RelativeLayout>
 
 
         <TextView
@@ -266,7 +319,7 @@
             android:layout_marginLeft="@dimen/x116"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="请选择"
+            android:hint="请选择"
             android:textSize="@dimen/x14"
             android:textColor="@color/colorparameter2"/>
 
@@ -280,6 +333,14 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/y31">
 
+
+        <RelativeLayout
+            android:id="@+id/line7"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorline"
+            >
+        </RelativeLayout>
 
         <TextView
 
@@ -300,24 +361,281 @@
             android:layout_marginLeft="@dimen/x116"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="请选择"
+            android:hint="请选择"
             android:textSize="@dimen/x14"
             android:textColor="@color/colorparameter2"/>
 
 
     </RelativeLayout>
 
-        <Button
+
+
+    <RelativeLayout
+        android:id="@+id/choese8"
+        android:layout_below="@+id/choese7"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y31"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <RelativeLayout
+            android:id="@+id/line8"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorline"
+            >
+        </RelativeLayout>
+
+
+        <TextView
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/parameter_productWeight"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter1"/>
+
+
+
+        <EditText
+            android:id="@+id/editText1"
+            android:background="@null"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x116"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请填写"
+            android:phoneNumber="true"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter2"/>
+
+
+    </RelativeLayout>
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/choese9"
+        android:layout_below="@+id/choese8"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y31"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <RelativeLayout
+            android:id="@+id/line9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorline"
+            >
+        </RelativeLayout>
+
+
+        <TextView
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/parameter_wallThickness"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter1"/>
+
+
+
+        <EditText
+            android:id="@+id/editText2"
+            android:background="@null"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x116"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请填写"
+            android:phoneNumber="true"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter2"/>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/choese10"
+        android:layout_below="@+id/choese9"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y25"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <RelativeLayout
+            android:id="@+id/line10"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorline"
+            >
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/Size"
+            android:layout_below="@+id/line10"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/y8"
+            android:layout_marginLeft="@dimen/x21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/parameter_productSize"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter1"/>
+
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/choese11"
+        android:layout_below="@+id/choese10"
+        android:layout_marginTop="@dimen/y1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y20"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/parameter_productLength"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter1"/>
+
+
+
+        <EditText
+            android:id="@+id/editText3"
+            android:background="@null"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x116"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请填写"
+            android:phoneNumber="true"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter2"/>
+
+
+    </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/choese12"
+                android:layout_below="@+id/choese11"
+                android:layout_marginTop="@dimen/y1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y20"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/parameter_productWidth"
+                    android:textSize="@dimen/x14"
+                    android:textColor="@color/colorparameter1"/>
+
+
+
+                <EditText
+                    android:id="@+id/editText4"
+                    android:background="@null"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x116"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:phoneNumber="true"
+                    android:hint="请填写"
+                    android:textSize="@dimen/x14"
+                    android:textColor="@color/colorparameter2"/>
+
+
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/choese13"
+                android:layout_below="@+id/choese12"
+                android:layout_marginTop="@dimen/y1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y20"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+
+                <TextView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/parameter_productHeight"
+                    android:textSize="@dimen/x14"
+                    android:textColor="@color/colorparameter1"/>
+
+
+
+                <EditText
+                    android:id="@+id/editText5"
+                    android:background="@null"
+                    android:phoneNumber="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x116"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="请填写"
+                    android:textSize="@dimen/x14"
+                    android:textColor="@color/colorparameter2"/>
+
+            </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/line12"
+                    android:layout_below="@+id/choese13"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorline"
+                    >
+                </RelativeLayout>
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <Button
             android:id="@+id/btn_next1"
-            android:layout_below="@+id/choese7"
+            android:layout_below="@+id/scrollView"
             android:layout_centerInParent="true"
-            android:layout_marginTop="@dimen/x20"
+            android:layout_marginTop="@dimen/y10"
+            android:enabled="false"
             android:layout_width="@dimen/x277"
             android:layout_height="@dimen/y27"
             android:text="下一步"
             android:textSize="@dimen/x14"
             android:textColor="@color/color_default"
-            android:background="@color/colorBackground"/>
+            android:background="@drawable/next1_btn"/>
 
 
 </RelativeLayout>
