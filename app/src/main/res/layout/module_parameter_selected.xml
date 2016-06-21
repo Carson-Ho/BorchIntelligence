@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:id="@+id/boss"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
@@ -77,8 +79,9 @@
     <RelativeLayout
         android:id="@+id/choese10"
         android:layout_below="@+id/line"
+        android:layout_marginTop="@dimen/y11"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y25"
+        android:layout_height="wrap_content"
         android:focusable="true"
         android:focusableInTouchMode="true">
 
@@ -86,12 +89,10 @@
         <TextView
             android:id="@+id/Size"
             android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="@dimen/y8"
             android:layout_marginLeft="@dimen/x21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="模具尺寸"
+            android:text="尺寸"
             android:textSize="@dimen/x14"
             android:textColor="@color/colorparameter1"/>
 
@@ -103,9 +104,9 @@
     <RelativeLayout
         android:id="@+id/choese11"
         android:layout_below="@+id/choese10"
-        android:layout_marginTop="@dimen/y1"
+        android:layout_marginTop="@dimen/y7"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y25"
+        android:layout_height="wrap_content"
         android:focusable="true"
         android:focusableInTouchMode="true">
 
@@ -117,17 +118,19 @@
             android:layout_height="wrap_content"
             android:text="@string/parameter_productLength"
             android:textSize="@dimen/x14"
-            android:textColor="@color/colorparameter1"/>
+            android:textColor="@color/colorparameter3"/>
 
 
 
         <EditText
             android:id="@+id/editText3"
             android:layout_centerVertical="true"
+            android:background="@null"
             android:layout_marginLeft="@dimen/x116"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="请填写"
+            android:phoneNumber="true"
             android:textSize="@dimen/x14"
             android:textColor="@color/colorparameter2"/>
 
@@ -138,12 +141,11 @@
     <RelativeLayout
         android:id="@+id/choese12"
         android:layout_below="@+id/choese11"
-        android:layout_marginTop="@dimen/y1"
+        android:layout_marginTop="@dimen/y7"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y25"
+        android:layout_height="wrap_content"
         android:focusable="true"
         android:focusableInTouchMode="true">
-
 
         <TextView
             android:layout_centerVertical="true"
@@ -152,17 +154,19 @@
             android:layout_height="wrap_content"
             android:text="@string/parameter_productWidth"
             android:textSize="@dimen/x14"
-            android:textColor="@color/colorparameter1"/>
+            android:textColor="@color/colorparameter3"/>
 
 
 
         <EditText
             android:id="@+id/editText4"
             android:layout_centerVertical="true"
+            android:background="@null"
             android:layout_marginLeft="@dimen/x116"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="请填写"
+            android:phoneNumber="true"
             android:textSize="@dimen/x14"
             android:textColor="@color/colorparameter2"/>
 
@@ -174,9 +178,9 @@
     <RelativeLayout
         android:id="@+id/choese13"
         android:layout_below="@+id/choese12"
-        android:layout_marginTop="@dimen/y1"
+        android:layout_marginTop="@dimen/y7"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y25"
+        android:layout_height="wrap_content"
         android:focusable="true"
         android:focusableInTouchMode="true">
 
@@ -188,13 +192,15 @@
             android:layout_height="wrap_content"
             android:text="@string/parameter_productHeight"
             android:textSize="@dimen/x14"
-            android:textColor="@color/colorparameter1"/>
+            android:textColor="@color/colorparameter3"/>
 
 
 
         <EditText
             android:id="@+id/editText5"
             android:layout_centerVertical="true"
+            android:background="@null"
+            android:phoneNumber="true"
             android:layout_marginLeft="@dimen/x116"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -204,4 +210,182 @@
 
 
     </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/line2"
+        android:layout_below="@+id/choese13"
+        android:layout_marginTop="@dimen/y11"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorline"
+        >
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/choese14"
+        android:layout_below="@+id/line2"
+        android:layout_marginTop="@dimen/y11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+
+        <TextView
+            android:id="@+id/Size1"
+            android:layout_marginLeft="@dimen/x21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="顶出方式"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter1"/>
+
+
+        <RadioGroup
+            android:id="@+id/radiogroup1"
+            android:layout_marginLeft="@dimen/x21"
+            android:layout_below="@+id/Size1"
+            android:layout_marginTop="@dimen/y7"
+            android:layout_width="@dimen/x185"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            >
+
+
+            <RadioButton
+                android:button="@null"
+                android:id="@+id/radiobutton1"
+                android:layout_width="@dimen/x80"
+                android:layout_height="@dimen/y25"
+                android:gravity="center"
+                android:text="顶出"
+                android:textColor="@color/moduletextcolor_selector"
+                android:background="@drawable/module_way"
+                />
+
+            <RadioButton
+                android:id="@+id/radiobutton2"
+                android:button="@null"
+                android:layout_width="@dimen/x80"
+                android:layout_height="@dimen/y25"
+                android:layout_marginLeft="@dimen/x25"
+                android:gravity="center"
+                android:text="拉伸"
+                android:textColor="@color/moduletextcolor_selector"
+                android:background="@drawable/module_way"
+                />
+
+        </RadioGroup>
+
+        <RelativeLayout
+            android:id="@+id/line4"
+            android:layout_below="@+id/radiogroup1"
+            android:layout_marginTop="@dimen/y11"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorline"
+            >
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/choese15"
+        android:layout_below="@+id/choese14"
+        android:layout_marginTop="@dimen/y11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+
+        <TextView
+            android:id="@+id/Size2"
+            android:layout_marginLeft="@dimen/x21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="定出方式"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter1"/>
+
+
+        <RadioGroup
+            android:id="@+id/radiogroup2"
+            android:layout_marginLeft="@dimen/x21"
+            android:layout_below="@+id/Size2"
+            android:layout_marginTop="@dimen/y7"
+            android:layout_width="@dimen/x185"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            >
+
+
+            <RadioButton
+                android:button="@null"
+                android:id="@+id/radiobutton3"
+                android:layout_width="@dimen/x80"
+                android:layout_height="@dimen/y25"
+                android:gravity="center"
+                android:text="标准尺寸"
+                android:textColor="@color/moduletextcolor_selector"
+                android:background="@drawable/module_way"
+                />
+
+            <RadioButton
+                android:id="@+id/radiobutton4"
+                android:button="@null"
+                android:layout_width="@dimen/x80"
+                android:layout_height="@dimen/y25"
+                android:layout_marginLeft="@dimen/x25"
+                android:gravity="center"
+                android:text="非标准尺寸"
+                android:textColor="@color/moduletextcolor_selector"
+                android:background="@drawable/module_way"
+                />
+
+        </RadioGroup>
+
+        <RelativeLayout
+            android:id="@+id/line3"
+            android:layout_below="@+id/radiogroup2"
+            android:layout_marginTop="@dimen/y11"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorline"
+            >
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+
+    <Button
+        android:id="@+id/btn_next2"
+
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/y12"
+        android:layout_width="@dimen/x277"
+        android:layout_height="@dimen/y25"
+        android:text="下一步"
+        android:textSize="@dimen/x14"
+        android:textColor="@color/color_default"
+        android:background="@drawable/next1_btn"/>
+
+
+
+
+
 </RelativeLayout>

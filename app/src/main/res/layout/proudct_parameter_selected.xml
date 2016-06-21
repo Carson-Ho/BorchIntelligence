@@ -516,7 +516,7 @@
             android:layout_height="wrap_content"
             android:text="@string/parameter_productLength"
             android:textSize="@dimen/x14"
-            android:textColor="@color/colorparameter1"/>
+            android:textColor="@color/colorparameter3"/>
 
 
 
@@ -553,7 +553,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/parameter_productWidth"
                     android:textSize="@dimen/x14"
-                    android:textColor="@color/colorparameter1"/>
+                    android:textColor="@color/colorparameter3"/>
 
 
 
@@ -591,7 +591,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/parameter_productHeight"
                     android:textSize="@dimen/x14"
-                    android:textColor="@color/colorparameter1"/>
+                    android:textColor="@color/colorparameter3"/>
 
 
 
@@ -626,12 +626,11 @@
 
     <Button
             android:id="@+id/btn_next1"
-            android:layout_below="@+id/scrollView"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="@dimen/y10"
-            android:enabled="false"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/y12"
             android:layout_width="@dimen/x277"
-            android:layout_height="@dimen/y27"
+            android:layout_height="@dimen/y25"
             android:text="下一步"
             android:textSize="@dimen/x14"
             android:textColor="@color/color_default"

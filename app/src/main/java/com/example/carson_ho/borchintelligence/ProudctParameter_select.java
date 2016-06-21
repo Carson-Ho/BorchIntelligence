@@ -138,7 +138,7 @@ public class ProudctParameter_select extends Activity implements TextWatcher{
 
         }
         else {
-            btn_next1.setEnabled(false);
+            btn_next1.setEnabled(true);
             System.out.println("不OK");
         }
     }
