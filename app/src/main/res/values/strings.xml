@@ -20,12 +20,23 @@
     <string name="pleaseChoese">请选择</string>
     <string name="buyGuide">购机向导</string>
     <string name="pleaseChosesmodule">请选择模具参数</string>
+    <string name="pleaseChosesmachine">请选择注塑机参数</string>
     <string name="Size">尺寸</string>
     <string name="dingchuWay">顶出方式</string>
     <string name="dingChu">顶出</string>
     <string name="laShen">拉伸</string>
     <string name="dingWeihuan">定位环</string>
     <string name="nonStandard">非标准尺寸</string>
+
+    <string name="screwType">螺杆类型</string>
+    <string name="A_level">A级</string>
+    <string name="B_level">B级</string>
+    <string name="C_level">C级</string>
+    <string name="motionType">动力类型</string>
+    <string name="youya">油压</string>
+    <string name="yeya">液压</string>
+    <string name="quandian">全电</string>
+    <string name="youdianhunhe">油电混合</string>
 
     <string-array name="spinnername">
 

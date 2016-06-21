@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 /**
  * Created by Carson_Ho on 16/6/17.
@@ -17,16 +18,18 @@ public class MoudleParameter_select extends Activity  implements  RadioGroup.OnC
 
     RadioGroup radioGroup1,radioGroup2;
     Button btn_1, btn_2,btn_3,btn_4,btn_next2;
-    EditText editText3,editText4,editText5;
+    EditText editText3,editText4,editText5,editText6;
+    TextView textUnit;
+    public int checkID ;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.module_parameter_selected);
-
-
         initView();
+
+
     }
 
     private void initView() {
@@ -39,6 +42,7 @@ public class MoudleParameter_select extends Activity  implements  RadioGroup.OnC
         editText3 = (EditText) findViewById(R.id.editText3);
         editText4 = (EditText) findViewById(R.id.editText4);
         editText5 = (EditText) findViewById(R.id.editText5);
+        editText6 = (EditText) findViewById(R.id.editText6);
 
         radioGroup1 = (RadioGroup) findViewById(R.id.radiogroup1);
         btn_1 = (Button) findViewById(R.id.radiobutton1);
@@ -54,13 +58,15 @@ public class MoudleParameter_select extends Activity  implements  RadioGroup.OnC
         editText5.addTextChangedListener(this);
 
 
+
+
         //下一步按钮跳转监听
         btn_next2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                         Intent intent = new Intent();
                         intent.setClass(MoudleParameter_select.this, MachineParameter_select.class);
-                        startActivity(intent);
+                startActivity(intent);
                     }
                 });
 
@@ -79,7 +85,59 @@ public class MoudleParameter_select extends Activity  implements  RadioGroup.OnC
                                }
         );
 
+        //设置隐藏的Edittext
+        editText6 = (EditText) findViewById(R.id.editText6);
+        textUnit = (TextView) findViewById(R.id.text_unit);
+
+        editText6.setVisibility(editText6 .INVISIBLE);
+        textUnit.setVisibility(textUnit.INVISIBLE);
+
+        checkID = btn_3.getId();
+
+        //监听选项
+        radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId == btn_4.getId()){
+                    editText6.setVisibility(editText6 .VISIBLE);
+                    textUnit.setVisibility(textUnit.VISIBLE);
+                    editText6.addTextChangedListener(MoudleParameter_select.this);
+                    checkID = btn_4.getId();
+                    if((editText3.getText().length()>0)&&(editText4.getText().length()>0)&&(editText5.getText().length()>0)&&(checkID == btn_3.getId())){
+                        btn_next2.setEnabled(true);
+                    }
+                    else if ((editText3.getText().length()>0)&&(editText4.getText().length()>0)&&(editText5.getText().length()>0)&&(checkID == btn_4.getId())&&(editText6.getText().length()>0)){
+                        btn_next2.setEnabled(true);
+                    }
+
+                    else {
+                        btn_next2.setEnabled(false);
+                    }
+
+                }
+                else {
+                    editText6.setVisibility(editText6 .INVISIBLE);
+                    textUnit.setVisibility(textUnit.INVISIBLE);
+                    checkID = btn_3.getId();
+                    if((editText3.getText().length()>0)&&(editText4.getText().length()>0)&&(editText5.getText().length()>0)&&(checkID == btn_3.getId())){
+                        btn_next2.setEnabled(true);
+                    }
+                    else if ((editText3.getText().length()>0)&&(editText4.getText().length()>0)&&(editText5.getText().length()>0)&&(checkID == btn_4.getId())&&(editText6.getText().length()>0)){
+                        btn_next2.setEnabled(true);
+                    }
+
+                    else {
+                        btn_next2.setEnabled(false);
+                    }
+
+
+                }
+            }
+        });
+
     }
+
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -98,11 +156,16 @@ public class MoudleParameter_select extends Activity  implements  RadioGroup.OnC
 
     @Override
     public void afterTextChanged(Editable s) {
-        if((editText3.getText().length()>0)&&(editText4.getText().length()>0)&&(editText5.getText().length()>0)){
+        if((editText3.getText().length()>0)&&(editText4.getText().length()>0)&&(editText5.getText().length()>0)&&(checkID == btn_3.getId())){
             btn_next2.setEnabled(true);
         }
-        else {
-            btn_next2.setEnabled(true);
+        else if ((editText3.getText().length()>0)&&(editText4.getText().length()>0)&&(editText5.getText().length()>0)&&(checkID == btn_4.getId())&&(editText6.getText().length()>0)){
+                btn_next2.setEnabled(true);
+            }
+
+            else {
+                btn_next2.setEnabled(false);
+            }
         }
-    }
+
 }

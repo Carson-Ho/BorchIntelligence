@@ -356,6 +356,27 @@
 
         </RadioGroup>
 
+        <EditText
+            android:id="@+id/editText6"
+            android:layout_width="@dimen/x71"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/radiogroup2"
+            android:layout_marginLeft="@dimen/x14"
+            android:layout_marginTop="@dimen/y18"
+            android:hint="@string/pleaseFillin"
+            android:phoneNumber="true"
+            />
+
+        <TextView
+            android:id="@+id/text_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/editText6"
+            android:layout_alignBottom="@+id/editText6"
+            android:text="mm"
+            android:textColor="@color/colorparameter1"
+            />
+
         <RelativeLayout
             android:id="@+id/line3"
             android:layout_below="@+id/radiogroup2"
