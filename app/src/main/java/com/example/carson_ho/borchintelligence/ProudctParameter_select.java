@@ -134,8 +134,8 @@ public class ProudctParameter_select extends Activity implements TextWatcher{
     @Override
     public void afterTextChanged(Editable s) {
         if ((editText1.getText().length()>0)&&(editText2.getText().length()>0)&&(editText3.getText().length()>0)&&(editText4.getText().length()>0)&&(editText5.getText().length()>0)&&(textView2.getText().length()>0)&&(textView3.getText().length()>0)&&(textView4.getText().length()>0)&&(textView5.getText().length()>0)&&(textView6.getText().length()>0)&&(textView7.getText().length()>0)&&(textView8.getText().length()>0)){
-            btn_next1.setEnabled(true);
 
+            btn_next1.setEnabled(true);
         }
         else {
             btn_next1.setEnabled(true);

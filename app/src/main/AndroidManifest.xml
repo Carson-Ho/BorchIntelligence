@@ -16,11 +16,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ProudctParameter_select">
-        </activity>
+        <activity android:name=".ProudctParameter_select"> </activity>
 
-        <activity android:name=".MoudleParameter_select">
-        </activity>
+        <activity android:name=".MoudleParameter_select">  </activity>
+
+        <activity android:name=".MachineParameter_select"> </activity>
+
     </application>
 
 </manifest>

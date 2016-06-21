@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="购机向导"
+            android:text="@string/buyGuide"
             android:textSize="@dimen/x22"
             android:textColor="@color/color_default"/>
 
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/y10"
         android:layout_centerHorizontal="true"
-        android:text="请选择模具参数"
+        android:text="@string/pleaseChosesmodule"
         android:textSize="@dimen/x16"
         android:textColor="@color/colorTab_selected"/>
 
@@ -92,7 +92,7 @@
             android:layout_marginLeft="@dimen/x21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="尺寸"
+            android:text="@string/Size"
             android:textSize="@dimen/x14"
             android:textColor="@color/colorparameter1"/>
 
@@ -129,7 +129,7 @@
             android:layout_marginLeft="@dimen/x116"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="请填写"
+            android:hint="@string/pleaseFillin"
             android:phoneNumber="true"
             android:textSize="@dimen/x14"
             android:textColor="@color/colorparameter2"/>
@@ -165,7 +165,7 @@
             android:layout_marginLeft="@dimen/x116"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="请填写"
+            android:hint="@string/pleaseFillin"
             android:phoneNumber="true"
             android:textSize="@dimen/x14"
             android:textColor="@color/colorparameter2"/>
@@ -204,7 +204,7 @@
             android:layout_marginLeft="@dimen/x116"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="请填写"
+            android:hint="@string/pleaseFillin"
             android:textSize="@dimen/x14"
             android:textColor="@color/colorparameter2"/>
 
@@ -240,7 +240,7 @@
             android:layout_marginLeft="@dimen/x21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="顶出方式"
+            android:text="@string/dingchuWay"
             android:textSize="@dimen/x14"
             android:textColor="@color/colorparameter1"/>
 
@@ -263,7 +263,8 @@
                 android:layout_width="@dimen/x80"
                 android:layout_height="@dimen/y25"
                 android:gravity="center"
-                android:text="顶出"
+                android:checked="true"
+                android:text="@string/dingChu"
                 android:textColor="@color/moduletextcolor_selector"
                 android:background="@drawable/module_way"
                 />
@@ -275,7 +276,7 @@
                 android:layout_height="@dimen/y25"
                 android:layout_marginLeft="@dimen/x25"
                 android:gravity="center"
-                android:text="拉伸"
+                android:text="@string/laShen"
                 android:textColor="@color/moduletextcolor_selector"
                 android:background="@drawable/module_way"
                 />
@@ -312,7 +313,7 @@
             android:layout_marginLeft="@dimen/x21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="定出方式"
+            android:text="@string/dingWeihuan"
             android:textSize="@dimen/x14"
             android:textColor="@color/colorparameter1"/>
 
@@ -335,7 +336,8 @@
                 android:layout_width="@dimen/x80"
                 android:layout_height="@dimen/y25"
                 android:gravity="center"
-                android:text="标准尺寸"
+                android:text="@string/standard"
+                android:checked="true"
                 android:textColor="@color/moduletextcolor_selector"
                 android:background="@drawable/module_way"
                 />
@@ -347,7 +349,7 @@
                 android:layout_height="@dimen/y25"
                 android:layout_marginLeft="@dimen/x25"
                 android:gravity="center"
-                android:text="非标准尺寸"
+                android:text="@string/nonStandard"
                 android:textColor="@color/moduletextcolor_selector"
                 android:background="@drawable/module_way"
                 />
@@ -373,16 +375,15 @@
 
     <Button
         android:id="@+id/btn_next2"
-
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="@dimen/y12"
         android:layout_width="@dimen/x277"
         android:layout_height="@dimen/y25"
-        android:text="下一步"
+        android:text="@string/next"
         android:textSize="@dimen/x14"
         android:textColor="@color/color_default"
-        android:background="@drawable/next1_btn"/>
+        android:background="@drawable/next2_btn"/>
 
 
 

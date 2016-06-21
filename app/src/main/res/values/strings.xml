@@ -14,6 +14,19 @@
     <string name="parameter_productLength">长(mm)</string>
     <string name="parameter_productWidth">宽(mm)</string>
     <string name="parameter_productHeight">高(mm)</string>
+    <string name="next">下一步</string>
+    <string name="standard">标准尺寸</string>
+    <string name="pleaseFillin">请填写</string>
+    <string name="pleaseChoese">请选择</string>
+    <string name="buyGuide">购机向导</string>
+    <string name="pleaseChosesmodule">请选择模具参数</string>
+    <string name="Size">尺寸</string>
+    <string name="dingchuWay">顶出方式</string>
+    <string name="dingChu">顶出</string>
+    <string name="laShen">拉伸</string>
+    <string name="dingWeihuan">定位环</string>
+    <string name="nonStandard">非标准尺寸</string>
+
     <string-array name="spinnername">
 
         <item>电子电器零件</item>
