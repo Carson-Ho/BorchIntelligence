@@ -20,7 +20,8 @@ public class MoudleParameter_select extends Activity  implements  RadioGroup.OnC
     Button btn_1, btn_2,btn_3,btn_4,btn_next2;
     EditText editText3,editText4,editText5,editText6;
     TextView textUnit;
-    public int checkID ;
+    private StringBuffer ed3,ed4,ed5,ed6,Rgoup1,Rgoup2;
+    public int checkID,checkID2 ;
 
 
     @Override
@@ -44,14 +45,25 @@ public class MoudleParameter_select extends Activity  implements  RadioGroup.OnC
         editText5 = (EditText) findViewById(R.id.editText5);
         editText6 = (EditText) findViewById(R.id.editText6);
 
+        ed3 = new StringBuffer("");
+        ed4 = new StringBuffer("");
+        ed5 = new StringBuffer("");
+        ed6 = new StringBuffer("");
+
+
+
         radioGroup1 = (RadioGroup) findViewById(R.id.radiogroup1);
         btn_1 = (Button) findViewById(R.id.radiobutton1);
         btn_2 = (Button) findViewById(R.id.radiobutton2);
 
-
         radioGroup2 = (RadioGroup) findViewById(R.id.radiogroup2);
         btn_3 = (Button) findViewById(R.id.radiobutton3);
         btn_4 = (Button) findViewById(R.id.radiobutton4);
+
+        Rgoup1 = new StringBuffer(btn_1.getText());
+
+        Rgoup2= new StringBuffer(btn_2.getText());
+
 
         editText3.addTextChangedListener(this);
         editText4.addTextChangedListener(this);
@@ -60,13 +72,43 @@ public class MoudleParameter_select extends Activity  implements  RadioGroup.OnC
 
 
 
+
+
+
         //下一步按钮跳转监听
         btn_next2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                        Intent intent = new Intent();
-                        intent.setClass(MoudleParameter_select.this, MachineParameter_select.class);
-                startActivity(intent);
+                //取出第一页数据,并装载到Intent里
+                Intent intent2 = new Intent();
+                Intent intent1 = getIntent();
+
+                intent2.putExtra("productType",intent1.getStringExtra("productType"));
+                intent2.putExtra("material",intent1.getStringExtra("material"));
+                intent2.putExtra("crumble",intent1.getStringExtra("crumble"));
+                intent2.putExtra("Caco3",intent1.getStringExtra("Caco3"));
+                intent2.putExtra("fiberglass",intent1.getStringExtra("fiberglass"));
+                intent2.putExtra("color",intent1.getStringExtra("color"));
+                intent2.putExtra("fireproofing",intent1.getStringExtra("fireproofing"));
+
+                intent2.putExtra("productWeight",intent1.getStringExtra("productWeight"));
+                intent2.putExtra("wallThickness",intent1.getStringExtra("wallThickness"));
+                intent2.putExtra("productLength",intent1.getStringExtra("productLength"));
+                intent2.putExtra("productWidth",intent1.getStringExtra("productWidth"));
+                intent2.putExtra("productHeight",intent1.getStringExtra("productHeight"));
+
+                 //把第二页数据存到Intent2里
+                intent2.putExtra("moduleLength",ed3.toString());
+                intent2.putExtra("moduleWidth",ed4.toString());
+                intent2.putExtra("moduleHeight",ed5.toString());
+                intent2.putExtra("locatingRing_Size",ed6.toString());
+
+                intent2.putExtra("ejector",Rgoup1.toString());
+                intent2.putExtra("locatingRing",Rgoup2.toString());
+
+                intent2.setClass(MoudleParameter_select.this, MachineParameter_select.class);
+
+                startActivity(intent2);
                     }
                 });
 
@@ -74,7 +116,6 @@ public class MoudleParameter_select extends Activity  implements  RadioGroup.OnC
 
         //        返回按钮监听
         Button btn = (Button) findViewById(R.id.back);
-
 
         btn.setOnClickListener(new View.OnClickListener() {
                                    @Override
@@ -94,7 +135,32 @@ public class MoudleParameter_select extends Activity  implements  RadioGroup.OnC
 
         checkID = btn_3.getId();
 
-        //监听选项
+
+
+        //监听第一组选项
+        radioGroup1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                if(checkedId == btn_2.getId()) {
+                    checkID2 = btn_2.getId();
+
+                    Rgoup1.delete(0, Rgoup1.length());
+                    Rgoup1.append(btn_2.getText());
+                }
+
+                else {
+
+                    checkID2 = btn_1.getId();
+                    Rgoup1.delete(0, Rgoup1.length());
+                    Rgoup1.append(btn_1.getText());
+
+
+                }
+            }
+        });
+
+        //监听第二组选项
         radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
             @Override
@@ -104,6 +170,10 @@ public class MoudleParameter_select extends Activity  implements  RadioGroup.OnC
                     textUnit.setVisibility(textUnit.VISIBLE);
                     editText6.addTextChangedListener(MoudleParameter_select.this);
                     checkID = btn_4.getId();
+
+                    Rgoup2.delete(0, Rgoup2.length());
+                    Rgoup2.append(btn_4.getText());
+
                     if((editText3.getText().length()>0)&&(editText4.getText().length()>0)&&(editText5.getText().length()>0)&&(checkID == btn_3.getId())){
                         btn_next2.setEnabled(true);
                     }
@@ -120,6 +190,10 @@ public class MoudleParameter_select extends Activity  implements  RadioGroup.OnC
                     editText6.setVisibility(editText6 .INVISIBLE);
                     textUnit.setVisibility(textUnit.INVISIBLE);
                     checkID = btn_3.getId();
+
+                    Rgoup2.delete(0, Rgoup2.length());
+                    Rgoup2.append(btn_3.getText());
+
                     if((editText3.getText().length()>0)&&(editText4.getText().length()>0)&&(editText5.getText().length()>0)&&(checkID == btn_3.getId())){
                         btn_next2.setEnabled(true);
                     }
@@ -156,6 +230,16 @@ public class MoudleParameter_select extends Activity  implements  RadioGroup.OnC
 
     @Override
     public void afterTextChanged(Editable s) {
+        ed3.delete(0, ed3.length());
+        ed4.delete(0, ed4.length());
+        ed5.delete(0, ed5.length());
+        ed6.delete(0, ed6.length());
+
+        ed3.append(editText3.getText());
+        ed4.append(editText4.getText());
+        ed5.append(editText5.getText());
+        ed6.append(editText6.getText());
+
         if((editText3.getText().length()>0)&&(editText4.getText().length()>0)&&(editText5.getText().length()>0)&&(checkID == btn_3.getId())){
             btn_next2.setEnabled(true);
         }

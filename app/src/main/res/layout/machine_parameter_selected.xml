@@ -268,7 +268,7 @@
         android:layout_marginBottom="@dimen/y12"
         android:layout_width="@dimen/x277"
         android:layout_height="@dimen/y25"
-        android:text="@string/next"
+        android:text="@string/finish"
         android:textSize="@dimen/x14"
         android:textColor="@color/color_default"
         android:background="@drawable/next2_btn"/>

@@ -15,6 +15,7 @@
     <string name="parameter_productWidth">宽(mm)</string>
     <string name="parameter_productHeight">高(mm)</string>
     <string name="next">下一步</string>
+    <string name="finish">完成</string>
     <string name="standard">标准尺寸</string>
     <string name="pleaseFillin">请填写</string>
     <string name="pleaseChoese">请选择</string>

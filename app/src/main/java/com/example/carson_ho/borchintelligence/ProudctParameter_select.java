@@ -23,6 +23,9 @@ public class ProudctParameter_select extends Activity implements TextWatcher{
     private EditText editText1,editText2,editText3,editText4,editText5;
     private List<TextView> textViewList;
     private List<String[]> selectedDataList;
+
+    private StringBuffer text2,text3,text4,text5,text6,text7,text8,ed1,ed2,ed3,ed4,ed5;
+
     private final String[] selectedData_proudctType = {"电子电器零件", "建筑材料", "医疗器械", "家用五金", "食用器皿", "交通器材", "运动器材", "照明设备", "家电产品", "办公器具", "光学用品"};
     private final String[] selectedData_material = {"ABS", "AS/SAN", "PS", "PP", "PPS", "PBT", "PE", "PSU/PSF", "PEI", "PAR", "TPE", "TPR", "HIPS", "PS", "PC", "POM", "PVC", "PMMA", "PC+ABS", "TPU", "LCP", "PA", "UPVC", "PET"};
     private final String[] selectedData_crumble = {"不添加", "15%以下", "15%-50%", "50%以上"};
@@ -31,6 +34,7 @@ public class ProudctParameter_select extends Activity implements TextWatcher{
     private final String[] selectedData_fireproofing = {"一般防火", "V0级阻燃", "无卤助燃"};
     private final String[] selectedData_color = {"色粉", "色母", "透明"};
 
+    private StringBuffer[] A;
 
     private Button btn_next1;
 
@@ -45,6 +49,12 @@ public class ProudctParameter_select extends Activity implements TextWatcher{
         editText4 = (EditText) findViewById(R.id.editText4);
         editText5 = (EditText) findViewById(R.id.editText5);
 
+        ed1 = new StringBuffer("");
+        ed2 = new StringBuffer("");
+        ed3 = new StringBuffer("");
+        ed4 = new StringBuffer("");
+        ed5 = new StringBuffer("");
+
 
 
         textView2 = (TextView) findViewById(R.id.text2);
@@ -54,6 +64,14 @@ public class ProudctParameter_select extends Activity implements TextWatcher{
         textView6 = (TextView) findViewById(R.id.text6);
         textView7 = (TextView) findViewById(R.id.text7);
         textView8 = (TextView) findViewById(R.id.text8);
+
+        text2 = new StringBuffer("");
+        text3 = new StringBuffer("");
+        text4 = new StringBuffer("");
+        text5 = new StringBuffer("");
+        text6 = new StringBuffer("");
+        text7 = new StringBuffer("");
+        text8 = new StringBuffer("");
 
         textViewList = new ArrayList<TextView>();//把用到的TextView放入List
         textViewList.add(textView2);
@@ -116,6 +134,35 @@ public class ProudctParameter_select extends Activity implements TextWatcher{
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(ProudctParameter_select.this, MoudleParameter_select.class);
+
+                String text22 = text2.toString();
+                String text33 = text3.toString();
+                String text44 = text4.toString();
+                String text55 = text5.toString();
+                String text66= text6.toString();
+                String text77 = text7.toString();
+                String text88 = text8.toString();
+
+                String ed11 = ed1.toString();
+                String ed22 = ed2.toString();
+                String ed33 = ed3.toString();
+                String ed44 = ed4.toString();
+                String ed55 = ed5.toString();
+
+                intent.putExtra("productType",text22);
+                intent.putExtra("material",text33);
+                intent.putExtra("crumble",text44);
+                intent.putExtra("Caco3",text55);
+                intent.putExtra("fiberglass",text66);
+                intent.putExtra("fireproofing",text77);
+                intent.putExtra("color",text88);
+
+                intent.putExtra("productWeight",ed11);
+                intent.putExtra("wallThickness",ed22);
+                intent.putExtra("productLength",ed33);
+                intent.putExtra("productWidth",ed44);
+                intent.putExtra("productHeight",ed55);
+
                 startActivity(intent);
             }
         });
@@ -133,6 +180,41 @@ public class ProudctParameter_select extends Activity implements TextWatcher{
 
     @Override
     public void afterTextChanged(Editable s) {
+
+        text2.delete(0, text2.length());
+        text3.delete(0, text3.length());
+        text4.delete(0,text4.length());
+        text5.delete(0,text5.length());
+        text6.delete(0,text6.length());
+        text7.delete(0,text7.length());
+        text8.delete(0,text8.length());
+
+        ed1.delete(0, ed1.length());
+        ed2.delete(0, ed2.length());
+        ed3.delete(0, ed3.length());
+        ed4.delete(0, ed4.length());
+        ed5.delete(0, ed5.length());
+
+
+
+        text2.append(textView2.getText());
+        text3.append(textView3.getText());
+        text4.append(textView4.getText());
+        text5.append(textView5.getText());
+        text6.append(textView6.getText());
+        text7.append(textView7.getText());
+        text8.append(textView8.getText());
+
+        ed1.append(editText1.getText());
+        ed2.append(editText2.getText());
+        ed3.append(editText3.getText());
+        ed4.append(editText4.getText());
+        ed5.append(editText5.getText());
+
+
+        System.out.println(text2);
+
+
         if ((editText1.getText().length()>0)&&(editText2.getText().length()>0)&&(editText3.getText().length()>0)&&(editText4.getText().length()>0)&&(editText5.getText().length()>0)&&(textView2.getText().length()>0)&&(textView3.getText().length()>0)&&(textView4.getText().length()>0)&&(textView5.getText().length()>0)&&(textView6.getText().length()>0)&&(textView7.getText().length()>0)&&(textView8.getText().length()>0)){
 
             btn_next1.setEnabled(true);
