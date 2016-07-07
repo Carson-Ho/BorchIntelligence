@@ -1,7 +1,8 @@
 package com.example.carson_ho.borchintelligence;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -13,7 +14,7 @@ import java.util.HashMap;
 /**
  * Created by Carson_Ho on 16/6/28.
  */
-public class Item_List extends AppCompatActivity implements MyItemClickListener {
+public class Item_List extends Activity implements MyItemClickListener {
 
     private RecyclerView Rv;
     private ArrayList<HashMap<String, Object>> listItem;
@@ -30,15 +31,27 @@ public class Item_List extends AppCompatActivity implements MyItemClickListener 
 
 
     public void initData() {
+        Intent intent1 = getIntent();
+
+
+//        String size = intent1.getStringExtra("商品数量");
+
+//        System.out.println(intent1.getB("商品数量"+0));
+
+        int size = intent1.getIntExtra("商品数量", 4000);
+
+        System.out.println(size);
+
         listItem = new ArrayList<HashMap<String, Object>>();/*在数组中存放数据*/
-        for (int i = 0; i < 20; i++) {
+//        for (int i = 0; i < Integer.parseInt(size); i++) {
+            for (int i = 0; i < size; i++) {
             HashMap<String, Object> map = new HashMap<String, Object>();
 
-            map.put(" Machines_Recyclerview_Item_name", "第" + i + "行");
-            map.put("Machines_Recyclerview_Item_address", "这是第" + i + "行");
-            map.put("Machines_Recyclerview_Item_wholesale", "这是第" + i + "行");
-            map.put("Machines_Recyclerview_Item_lowerest_wholesale_number", "这是第" + i + "行");
-            map.put("Machines_Recyclerview_Item_price", "这是第" + i + "行");
+            map.put(" Machines_Recyclerview_Item_name", intent1.getStringExtra("商品名称"+i));
+            map.put("Machines_Recyclerview_Item_address", intent1.getStringExtra("商品地址"+i));
+                map.put("Machines_Recyclerview_Item_lowerest_wholesale_number", "最低批发量");
+            map.put("Machines_Recyclerview_Item_wholesale", "邮费" + i);
+            map.put("Machines_Recyclerview_Item_price", "$300000");
             map.put("Machines_Recyclerview_Item_picture", R.mipmap.ic_launcher);
 
             listItem.add(map);

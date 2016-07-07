@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Borch Intelligence</string>
+    <string name="machine_List">注塑机列表</string>
+
     <string name="parameter_default1">请选择</string>
     <string name="parameter_productType">类型</string>
     <string name="parameter_material">原料</string>

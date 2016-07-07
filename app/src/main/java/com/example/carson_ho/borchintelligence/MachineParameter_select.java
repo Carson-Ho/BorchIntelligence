@@ -130,7 +130,7 @@ public class MachineParameter_select extends Activity {
 
     public void POSTrequest() {
         //取出所有数据
-        Intent intent1 = getIntent();
+        final Intent intent1 = getIntent();
 
         //第一页数据
         String productType= intent1.getStringExtra("productType");
@@ -165,25 +165,45 @@ public class MachineParameter_select extends Activity {
         JSONObject jo = new JSONObject();
         try {
             jo.put("requestType", "Search");
-            jo.put("productType", productType);
-            jo.put("material", material);
-            jo.put("crumble", crumble);
-            jo.put("CaCo3", Caco3);
-            jo.put("fiberglass", fiberglass);
-            jo.put("fireproofing", fireproofing);
-            jo.put("color", color);
-            jo.put("productWeight", productWeight);
-            jo.put("productLength", productLength);
-            jo.put("productWidth", productWidth);
-            jo.put("productHeight", productHeight);
-            jo.put("wallThickness", wallThickness);
-            jo.put("moduleLength", moduleLength);
-            jo.put("moduleWidth", moduleWidth);
-            jo.put("moduleHeight", moduleHeight);
-            jo.put("ejector", ejector);
-            jo.put("locatingRing", locatingRing);
-            jo.put("screw", screw);
-            jo.put("power", power);
+            jo.put("productType", "电子电器零件");
+            jo.put("material", "PC");
+            jo.put("crumble", "不添加");
+            jo.put("CaCo3", "不添加");
+            jo.put("fiberglass", "15%以下");
+            jo.put("fireproofing", "一般防火");
+            jo.put("color", "色粉");
+            jo.put("productWeight", 23.4);
+            jo.put("productLength", 12.2);
+            jo.put("productWidth", 11.2);
+            jo.put("productHeight", 23.2);
+            jo.put("wallThickness", 3.2);
+            jo.put("moduleLength", 1.1);
+            jo.put("moduleWidth", 2.2);
+            jo.put("moduleHeight", 200);
+            jo.put("ejector", "拉伸");
+            jo.put("locatingRing", 4.4);
+            jo.put("screw", "A");
+            jo.put("power", "油压");
+//            jo.put("requestType", "Search");
+//            jo.put("productType", productType);
+//            jo.put("material", material);
+//            jo.put("crumble", crumble);
+//            jo.put("CaCo3", Caco3);
+//            jo.put("fiberglass", fiberglass);
+//            jo.put("fireproofing", fireproofing);
+//            jo.put("color", color);
+//            jo.put("productWeight", productWeight);
+//            jo.put("productLength", productLength);
+//            jo.put("productWidth", productWidth);
+//            jo.put("productHeight", productHeight);
+//            jo.put("wallThickness", wallThickness);
+//            jo.put("moduleLength", moduleLength);
+//            jo.put("moduleWidth", moduleWidth);
+//            jo.put("moduleHeight", moduleHeight);
+//            jo.put("ejector", ejector);
+//            jo.put("locatingRing", locatingRing);
+//            jo.put("screw", screw);
+//            jo.put("power", power);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -198,7 +218,7 @@ public class MachineParameter_select extends Activity {
         //创建Retrofit对象
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://218.192.170.132:8000")//设置baseUrl
+                .baseUrl("http://218.192.170.132:8001")//设置baseUrl
                 .addConverterFactory(GsonConverterFactory.create())//设置使用Gson解析
                 .build();
 
@@ -212,19 +232,33 @@ public class MachineParameter_select extends Activity {
             public void onResponse(Call<CommodityImfor> call, Response<CommodityImfor> response) {
                 System.out.println("有回应");
                 //有数据返回
-                if (response.isSuccessful()) {
+                if (response.isSuccessful() && response.body().getData().size()>0) {
 
-                    Intent intent2 = new Intent(MachineParameter_select.this,Item_List.class);
-                    startActivity(intent2);
+                    Intent intent2 = new Intent();
+
+                    intent2.putExtra("商品数量" ,response.body().getData().size());
 
                     System.out.println(response.body().getFail());
                     System.out.println(response.body().getTotal());
+
                     for (int i = 0; i < response.body().getData().size(); i++) {
+
+
+                        intent2.putExtra("商品名称" + i,response.body().getData().get(i).getName());
+                        intent2.putExtra("商品地址" + i, response.body().getData().get(i).getAddress());
+                        intent2.putExtra("商品照片" + i, response.body().getData().get(i).getPicture());
+                        intent2.putExtra("邮费" + i,response.body().getData().get(i).getExpress_cost());
+
+
                         System.out.println(response.body().getData().get(i).getName());
                         System.out.println(response.body().getData().get(i).getAddress());
                         System.out.println(response.body().getData().get(i).getPicture());
                         System.out.println(response.body().getData().get(i).getExpress_cost());
                     }
+
+                    intent2.setClass(MachineParameter_select.this, Item_List.class);
+
+                    startActivity(intent2);
 
                 } else {
                     dialogMachineNotFound();
@@ -235,6 +269,7 @@ public class MachineParameter_select extends Activity {
             //无连接到服务器
             @Override
             public void onFailure(Call<CommodityImfor> call, Throwable throwable) {
+                System.out.println("没回应");
                 dialogNetworkWarning();
             }
         });
