@@ -2,13 +2,15 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/layout_default">
 
     <RelativeLayout
         android:id="@+id/title1"
         android:layout_width="match_parent"
         android:layout_height="@dimen/x43"
         android:background="@color/colorBackground"
+
     >
 
 
@@ -86,7 +88,9 @@
         android:id="@+id/choese1"
         android:layout_below="@+id/line"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y31">
+        android:layout_height="@dimen/y31"
+        android:background="@drawable/layout_style"
+        >
 
 
         <TextView

@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@color/layout_default">
 
     <include layout="@layout/main_top" />
 
@@ -26,11 +27,6 @@
         android:layout_height="wrap_content"
         android:background="@android:color/black" ><!--装4个Fragment-->
 
-        <FrameLayout
-            android:id="@android:id/tabcontent"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="0" /><!--装Tab的内容-->
     </android.support.v4.app.FragmentTabHost>
 </LinearLayout>
 

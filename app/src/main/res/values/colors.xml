@@ -9,6 +9,7 @@
     <color name="colorAccent">#ffe30e</color>
     <color name="colorRecommend">#fff3a4</color>
     <color name="colorline">#f0f0f0</color>
+    <color name="layout_default">#ffffff</color>
     <color name="colorparameter1">#333333</color>
     <color name="colorparameter3">#666666</color>
     <color name="colorparameter2">#999999</color>

@@ -109,6 +109,7 @@ public class MoudleParameter_select extends Activity  implements  RadioGroup.OnC
                 intent2.setClass(MoudleParameter_select.this, MachineParameter_select.class);
 
                 startActivity(intent2);
+                overridePendingTransition(R.anim.in_from_right, R.anim.fade_out);
                     }
                 });
 
@@ -121,6 +122,7 @@ public class MoudleParameter_select extends Activity  implements  RadioGroup.OnC
                                    @Override
                                    public void onClick(View v) {
                                        finish();
+                                       overridePendingTransition(R.anim.fade_in, R.anim.out_from_right);
 
                                    }
                                }

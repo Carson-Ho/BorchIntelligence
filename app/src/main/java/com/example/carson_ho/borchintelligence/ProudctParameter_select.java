@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,16 +19,17 @@ import java.util.List;
  */
 public class ProudctParameter_select extends Activity implements TextWatcher{
 
-
+    private ViewGroup layout1, layout2, layout3, layout4, layout5, layout6, layout7;
     private TextView textView2, textView3, textView4, textView5, textView6, textView7, textView8;
     private EditText editText1,editText2,editText3,editText4,editText5;
+    private List<ViewGroup> viewgroup;
     private List<TextView> textViewList;
     private List<String[]> selectedDataList;
 
     private StringBuffer text2,text3,text4,text5,text6,text7,text8,ed1,ed2,ed3,ed4,ed5;
 
     private final String[] selectedData_proudctType = {"电子电器零件", "建筑材料", "医疗器械", "家用五金", "食用器皿", "交通器材", "运动器材", "照明设备", "家电产品", "办公器具", "光学用品"};
-    private final String[] selectedData_material = {"ABS", "AS/SAN", "PS", "PP", "PPS", "PBT", "PE", "PSU/PSF", "PEI", "PAR", "TPE", "TPR", "HIPS", "PS", "PC", "POM", "PVC", "PMMA", "PC+ABS", "TPU", "LCP", "PA", "UPVC", "PET"};
+    private final String[] selectedData_material = {"PVC rigid", "PVC soft", "PC", "PMMA", "PA4.6", "PA 6", "PA 6.6", "PA 11", "PA 12", "PA amorphous", "PET", "CA", "CAB", "CP", "PPE mod", "PAR", "PSU", "PES", "PES", "PEI", "PAI", "PE soft", "PE rigid", "PP", "POM", "PBT", "PPS", "FEP", "ETFE", "PAA", "PPA", "PAEK", "LCP", "TP-U", "热固性塑料", "LSR"};
     private final String[] selectedData_crumble = {"不添加", "15%以下", "15%-50%", "50%以上"};
     private final String[] selectedData_CaCo3 = {"不添加", "15%以下", "15%-30%", "30%以上"};
     private final String[] selectedData_fiberglass = {"不添加", "15%以下", "15%-25%", "25-45%以上", "45%以上"};
@@ -56,6 +58,15 @@ public class ProudctParameter_select extends Activity implements TextWatcher{
         ed5 = new StringBuffer("");
 
 
+        layout1 = (ViewGroup) findViewById(R.id.choese1);
+        layout2 = (ViewGroup) findViewById(R.id.choese2);
+        layout3 = (ViewGroup) findViewById(R.id.choese3);
+        layout4 = (ViewGroup) findViewById(R.id.choese4);
+        layout5 = (ViewGroup) findViewById(R.id.choese5);
+        layout6 = (ViewGroup) findViewById(R.id.choese6);
+        layout7 = (ViewGroup) findViewById(R.id.choese7);
+
+
 
         textView2 = (TextView) findViewById(R.id.text2);
         textView3 = (TextView) findViewById(R.id.text3);
@@ -72,6 +83,17 @@ public class ProudctParameter_select extends Activity implements TextWatcher{
         text6 = new StringBuffer("");
         text7 = new StringBuffer("");
         text8 = new StringBuffer("");
+
+
+
+        viewgroup = new ArrayList<ViewGroup>();//把用到的TextView放入List
+        viewgroup.add(layout1);
+        viewgroup.add(layout2);
+        viewgroup.add(layout3);
+        viewgroup.add(layout4);
+        viewgroup.add(layout5);
+        viewgroup.add(layout6);
+        viewgroup.add(layout7);
 
         textViewList = new ArrayList<TextView>();//把用到的TextView放入List
         textViewList.add(textView2);
@@ -94,7 +116,7 @@ public class ProudctParameter_select extends Activity implements TextWatcher{
 
         //使用Dialog重用类
         DialogMultiplex mdialogReuse = new DialogMultiplex();
-        mdialogReuse.DialogChooseList(this, textViewList, selectedDataList);
+        mdialogReuse.DialogChooseList(this, textViewList, selectedDataList,viewgroup);
 
 
 //        返回按钮监听
@@ -105,6 +127,7 @@ public class ProudctParameter_select extends Activity implements TextWatcher{
                                    @Override
                                    public void onClick(View v) {
                                        finish();
+                                       overridePendingTransition(R.anim.fade_in, R.anim.out_from_right);
 
                                    }
                                }
@@ -164,6 +187,7 @@ public class ProudctParameter_select extends Activity implements TextWatcher{
                 intent.putExtra("productHeight",ed55);
 
                 startActivity(intent);
+                overridePendingTransition(R.anim.in_from_right, R.anim.fade_out);
             }
         });
     }

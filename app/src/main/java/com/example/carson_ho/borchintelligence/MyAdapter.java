@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -18,8 +20,10 @@ public class MyAdapter extends RecyclerView.Adapter{
     private LayoutInflater inflater;
     private ArrayList<HashMap<String, Object>> listItem;
     private MyItemClickListener myItemClickListener;
+    private Context context;
 
     public MyAdapter(Context context, ArrayList<HashMap<String, Object>> listItem) {
+        this.context = context;
         inflater = LayoutInflater.from(context);
         this.listItem = listItem;
     }//构造函数，传入数据
@@ -90,12 +94,16 @@ public class MyAdapter extends RecyclerView.Adapter{
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         Viewholder vh = (Viewholder) holder;
-        vh.Machines_Recyclerview_Item_price.setText((String) listItem.get(position).get("Machines_Recyclerview_Item_price"));
         vh.Machines_Recyclerview_Item_name.setText((String) listItem.get(position).get("Machines_Recyclerview_Item_name"));
+        vh.Machines_Recyclerview_Item_price.setText(listItem.get(position).get("Machines_Recyclerview_Item_price").toString());
         vh.Machines_Recyclerview_Item_lowerest_wholesale_number.setText((String) listItem.get(position).get("Machines_Recyclerview_Item_lowerest_wholesale_number"));
-        vh.Machines_Recyclerview_Item_wholesale.setText((String) listItem.get(position).get("Machines_Recyclerview_Item_wholesale"));
+        vh.Machines_Recyclerview_Item_wholesale.setText( listItem.get(position).get("Machines_Recyclerview_Item_wholesale").toString());
         vh.Machines_Recyclerview_Item_address.setText((String) listItem.get(position).get("Machines_Recyclerview_Item_address"));
-        vh.Machines_Recyclerview_Item_picture.setImageResource((Integer) listItem.get(position).get("Machines_Recyclerview_Item_picture"));
+        Glide.with(context)
+                .load((String) listItem.get(position).get("Machines_Recyclerview_Item_picture"))
+                .into(vh.Machines_Recyclerview_Item_picture);
+
+
     }//在这里绑定数据到ViewHolder里面
 
     @Override

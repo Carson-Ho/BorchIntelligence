@@ -26,6 +26,7 @@ public class Fragment1 extends Fragment {
 
                 Intent intent = new Intent(getActivity(), ProudctParameter_select.class);
                 startActivity(intent);
+
             }
         });
 

@@ -121,6 +121,7 @@ public class MachineParameter_select extends Activity {
                                    @Override
                                    public void onClick(View v) {
                                        finish();
+                                       overridePendingTransition(R.anim.fade_in, R.anim.out_from_right);
 
                                    }
                                }
@@ -243,14 +244,16 @@ public class MachineParameter_select extends Activity {
 
                     for (int i = 0; i < response.body().getData().size(); i++) {
 
-
+                        //保存数据搭配Intent传递到下商品列表页
                         intent2.putExtra("商品名称" + i,response.body().getData().get(i).getName());
+                        intent2.putExtra("商品价格" + i,response.body().getData().get(i).getPrice());
                         intent2.putExtra("商品地址" + i, response.body().getData().get(i).getAddress());
                         intent2.putExtra("商品照片" + i, response.body().getData().get(i).getPicture());
                         intent2.putExtra("邮费" + i,response.body().getData().get(i).getExpress_cost());
 
 
                         System.out.println(response.body().getData().get(i).getName());
+                        System.out.println(response.body().getData().get(i).getPrice());
                         System.out.println(response.body().getData().get(i).getAddress());
                         System.out.println(response.body().getData().get(i).getPicture());
                         System.out.println(response.body().getData().get(i).getExpress_cost());
@@ -259,6 +262,7 @@ public class MachineParameter_select extends Activity {
                     intent2.setClass(MachineParameter_select.this, Item_List.class);
 
                     startActivity(intent2);
+                    overridePendingTransition(R.anim.in_from_right, R.anim.fade_out);
 
                 } else {
                     dialogMachineNotFound();

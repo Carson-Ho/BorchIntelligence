@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -26,6 +27,18 @@ public class Item_List extends Activity implements MyItemClickListener {
         setContentView(R.layout.machine_list);
         initData();
         initView();
+        //        返回按钮监听
+        Button btn = (Button) findViewById(R.id.back);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+                                   @Override
+                                   public void onClick(View v) {
+                                       finish();
+                                       overridePendingTransition(R.anim.fade_in, R.anim.out_from_right);
+
+                                   }
+                               }
+        );
 
     }
 
@@ -47,12 +60,12 @@ public class Item_List extends Activity implements MyItemClickListener {
             for (int i = 0; i < size; i++) {
             HashMap<String, Object> map = new HashMap<String, Object>();
 
-            map.put(" Machines_Recyclerview_Item_name", intent1.getStringExtra("商品名称"+i));
+            map.put("Machines_Recyclerview_Item_name", intent1.getStringExtra("商品名称" + i));
             map.put("Machines_Recyclerview_Item_address", intent1.getStringExtra("商品地址"+i));
                 map.put("Machines_Recyclerview_Item_lowerest_wholesale_number", "最低批发量");
-            map.put("Machines_Recyclerview_Item_wholesale", "邮费" + i);
-            map.put("Machines_Recyclerview_Item_price", "$300000");
-            map.put("Machines_Recyclerview_Item_picture", R.mipmap.ic_launcher);
+            map.put("Machines_Recyclerview_Item_wholesale", intent1.getIntExtra("邮费"+i,4000));
+            map.put("Machines_Recyclerview_Item_price", intent1.getIntExtra("商品价格" + i, 4000));
+            map.put("Machines_Recyclerview_Item_picture", intent1.getStringExtra("商品照片"+i));
 
             listItem.add(map);
         }
