@@ -120,7 +120,7 @@ public class ProudctParameter_select extends Activity implements TextWatcher{
 
 
 //        返回按钮监听
-        Button btn = (Button) findViewById(R.id.back);
+        ViewGroup btn = (ViewGroup) findViewById(R.id.title20);
 
 
         btn.setOnClickListener(new View.OnClickListener() {

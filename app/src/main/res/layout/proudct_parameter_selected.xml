@@ -13,16 +13,22 @@
 
     >
 
+        <RelativeLayout
+            android:id="@+id/title20"
+            android:layout_alignParentLeft="true"
+            android:layout_width="@dimen/x43"
+            android:layout_height="@dimen/x43"
+            android:background="@drawable/back_btn">
 
         <Button
             android:id="@+id/back"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/x21"
+            android:layout_centerInParent="true"
             android:layout_width="@dimen/x10"
             android:layout_height="@dimen/y13"
             android:background="@drawable/back"
             />
+        </RelativeLayout>
+
 
 
         <TextView
