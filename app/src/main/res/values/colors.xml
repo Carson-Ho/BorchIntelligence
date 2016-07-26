@@ -13,6 +13,11 @@
     <color name="colorparameter1">#333333</color>
     <color name="colorparameter3">#666666</color>
     <color name="colorparameter2">#999999</color>
+    <color name="colorproduct_name">#333333</color>
+
+    <color name="order">#fff3a4</color>
+
+
 
 
 </resources>

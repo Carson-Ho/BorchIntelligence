@@ -7,7 +7,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -94,8 +93,20 @@ public class Item_List extends Activity implements MyItemClickListener {
 
     @Override
     public void onItemClick(View view, int postion) {//点击事件的回调函数
-        System.out.println("点击了第" + postion + "行");
-        Toast.makeText(this, (String) listItem.get(postion).get("ItemText"), Toast.LENGTH_SHORT).show();
+
+       Intent intent = new Intent(Item_List.this,Product_imfro.class);
+
+        intent.putExtra("product_picture",(String)listItem.get(postion).get("Machines_Recyclerview_Item_picture"));
+       intent.putExtra("product_name",(String)listItem.get(postion).get("Machines_Recyclerview_Item_name"));
+        intent.putExtra("product_price",(Integer)listItem.get(postion).get("Machines_Recyclerview_Item_price"));
+        intent.putExtra("product_wholse",(String)listItem.get(postion).get("Machines_Recyclerview_Item_lowerest_wholesale_number"));
+        intent.putExtra("product_address",(String)listItem.get(postion).get("Machines_Recyclerview_Item_address"));
+
+
+        System.out.println((String) listItem.get(postion).get("Machines_Recyclerview_Item_name"));
+        System.out.println((Integer)listItem.get(postion).get("Machines_Recyclerview_Item_price"));
+        startActivity(intent);
+
     }
 }
 

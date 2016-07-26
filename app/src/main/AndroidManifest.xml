@@ -21,6 +21,8 @@
 
         <activity android:name=".ProudctParameter_select"> </activity>
 
+        <activity android:name=".Product_imfro"> </activity>
+
         <activity android:name=".MoudleParameter_select">  </activity>
 
         <activity android:name=".MachineParameter_select"> </activity>

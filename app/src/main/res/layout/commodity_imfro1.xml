@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    >
+
+    <ImageView
+        android:id="@+id/product_picture"
+        android:layout_width="@dimen/x320"
+        android:layout_height="@dimen/y225"
+        />
+
+
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/y60"
+       android:layout_below="@+id/product_picture"
+       android:background="@drawable/layout_shape"
+       >
+
+    <TextView
+        android:id="@+id/product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="@dimen/x16"
+        android:textColor="@color/colorproduct_name"
+        android:layout_marginTop="@dimen/x12"
+        android:layout_marginLeft="@dimen/x17"/>
+
+    <TextView
+        android:id="@+id/product_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$133244"
+        android:textSize="@dimen/x16"
+        android:textColor="@color/colorTab_selected"
+        android:layout_below="@+id/product_name"
+        android:layout_marginTop="@dimen/x5"
+        android:layout_marginLeft="@dimen/x17"
+        />
+
+
+       <TextView
+           android:id="@+id/product_wholesale"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="40台起批"
+           android:textSize="@dimen/x11"
+           android:textColor="@color/colorparameter2"
+           android:layout_marginLeft="@dimen/x17"
+           android:layout_marginTop="@dimen/x62"
+           />
+
+       <TextView
+           android:id="@+id/product_address"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="广东阳江"
+           android:textSize="@dimen/x11"
+           android:textColor="@color/colorparameter2"
+           android:layout_toEndOf="@+id/product_wholesale"
+           android:layout_marginLeft="@dimen/x24"
+           android:layout_alignTop="@+id/product_wholesale"
+
+           />
+
+       <TextView
+           android:id="@+id/product_fare"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="运费:请与客服联系"
+           android:textSize="@dimen/x11"
+           android:textColor="@color/colorparameter2"
+           android:layout_marginLeft="@dimen/x222"
+           android:layout_alignTop="@+id/product_wholesale"
+
+           />
+
+   </RelativeLayout>
+</RelativeLayout>
