@@ -11,22 +11,29 @@
 
 
     <RelativeLayout
-        android:id="@+id/title1"
+        android:id="@+id/top_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/x43"
         android:background="@color/colorBackground"
         >
 
-
-        <Button
-            android:id="@+id/back"
+        <RelativeLayout
+            android:id="@+id/layout_back"
             android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/x21"
-            android:layout_width="@dimen/x10"
-            android:layout_height="@dimen/y13"
-            android:background="@drawable/back"
-            />
+            android:layout_width="@dimen/x43"
+            android:layout_height="@dimen/x43"
+            android:background="@drawable/back_btn">
+
+            <Button
+                android:id="@+id/back"
+                android:layout_centerInParent="true"
+                android:layout_width="@dimen/x10"
+                android:layout_height="@dimen/y13"
+                android:background="@drawable/back"
+                android:clickable="false"
+                android:focusable="false"
+                />
+        </RelativeLayout>
 
 
         <TextView
@@ -36,15 +43,12 @@
             android:text="@string/buyGuide"
             android:textSize="@dimen/x22"
             android:textColor="@color/color_default"/>
-
-
-
     </RelativeLayout>
 
 
     <ImageView
         android:id="@+id/process1"
-        android:layout_below="@+id/title1"
+        android:layout_below="@+id/top_bar"
         android:layout_marginTop="@dimen/y10"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
@@ -75,36 +79,9 @@
         >
     </RelativeLayout>
 
-
-
     <RelativeLayout
-        android:id="@+id/choese10"
+        android:id="@+id/choese_length"
         android:layout_below="@+id/line"
-        android:layout_marginTop="@dimen/y11"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true">
-
-
-        <TextView
-            android:id="@+id/Size"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="@dimen/x21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Size"
-            android:textSize="@dimen/x14"
-            android:textColor="@color/colorparameter1"/>
-
-    </RelativeLayout>
-
-
-
-
-    <RelativeLayout
-        android:id="@+id/choese11"
-        android:layout_below="@+id/choese10"
         android:layout_marginTop="@dimen/y7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -124,7 +101,7 @@
 
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/editText_length"
             android:layout_centerVertical="true"
             android:background="@null"
             android:layout_marginLeft="@dimen/x116"
@@ -134,14 +111,25 @@
             android:phoneNumber="true"
             android:textSize="@dimen/x14"
             android:textColor="@color/colorparameter2"/>
-
-
     </RelativeLayout>
 
 
+
+
+
     <RelativeLayout
-        android:id="@+id/choese12"
-        android:layout_below="@+id/choese11"
+        android:id="@+id/line8"
+        android:layout_below="@+id/choese_length"
+        android:layout_marginTop="@dimen/y10"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorline"
+        >
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/choese_width"
+        android:layout_below="@+id/line8"
         android:layout_marginTop="@dimen/y7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -160,7 +148,7 @@
 
 
         <EditText
-            android:id="@+id/editText4"
+            android:id="@+id/editText_width"
             android:layout_centerVertical="true"
             android:background="@null"
             android:layout_marginLeft="@dimen/x116"
@@ -174,11 +162,19 @@
 
     </RelativeLayout>
 
-
+    <RelativeLayout
+        android:id="@+id/line9"
+        android:layout_below="@+id/choese_width"
+        android:layout_marginTop="@dimen/y10"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorline"
+        >
+    </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/choese13"
-        android:layout_below="@+id/choese12"
+        android:id="@+id/choese_height"
+        android:layout_below="@+id/line9"
         android:layout_marginTop="@dimen/y7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -198,7 +194,7 @@
 
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/editText_height"
             android:layout_centerVertical="true"
             android:background="@null"
             android:phoneNumber="true"
@@ -216,7 +212,7 @@
 
     <RelativeLayout
         android:id="@+id/line2"
-        android:layout_below="@+id/choese13"
+        android:layout_below="@+id/choese_height"
         android:layout_marginTop="@dimen/y11"
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -225,190 +221,17 @@
     </RelativeLayout>
 
 
-
-    <RelativeLayout
-        android:id="@+id/choese14"
-        android:layout_below="@+id/line2"
-        android:layout_marginTop="@dimen/y11"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true">
-
-
-        <TextView
-            android:id="@+id/Size1"
-            android:layout_marginLeft="@dimen/x21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dingchuWay"
-            android:textSize="@dimen/x14"
-            android:textColor="@color/colorparameter1"/>
-
-
-        <RadioGroup
-            android:id="@+id/radiogroup1"
-            android:layout_marginLeft="@dimen/x21"
-            android:layout_below="@+id/Size1"
-            android:layout_marginTop="@dimen/y7"
-            android:layout_width="@dimen/x185"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-
-            >
-
-
-            <RadioButton
-                android:button="@null"
-                android:id="@+id/radiobutton1"
-                android:layout_width="@dimen/x80"
-                android:layout_height="@dimen/y25"
-                android:gravity="center"
-                android:checked="true"
-                android:text="@string/dingChu"
-                android:textColor="@color/moduletextcolor_selector"
-                android:background="@drawable/module_way"
-                />
-
-            <RadioButton
-                android:id="@+id/radiobutton2"
-                android:button="@null"
-                android:layout_width="@dimen/x80"
-                android:layout_height="@dimen/y25"
-                android:layout_marginLeft="@dimen/x25"
-                android:gravity="center"
-                android:text="@string/laShen"
-                android:textColor="@color/moduletextcolor_selector"
-                android:background="@drawable/module_way"
-                />
-
-        </RadioGroup>
-
-        <RelativeLayout
-            android:id="@+id/line4"
-            android:layout_below="@+id/radiogroup1"
-            android:layout_marginTop="@dimen/y11"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorline"
-            >
-        </RelativeLayout>
-
-
-    </RelativeLayout>
-
-
-
-    <RelativeLayout
-        android:id="@+id/choese15"
-        android:layout_below="@+id/choese14"
-        android:layout_marginTop="@dimen/y11"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true">
-
-
-        <TextView
-            android:id="@+id/Size2"
-            android:layout_marginLeft="@dimen/x21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dingWeihuan"
-            android:textSize="@dimen/x14"
-            android:textColor="@color/colorparameter1"/>
-
-
-        <RadioGroup
-            android:id="@+id/radiogroup2"
-            android:layout_marginLeft="@dimen/x21"
-            android:layout_below="@+id/Size2"
-            android:layout_marginTop="@dimen/y7"
-            android:layout_width="@dimen/x185"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-
-            >
-
-
-            <RadioButton
-                android:button="@null"
-                android:id="@+id/radiobutton3"
-                android:layout_width="@dimen/x80"
-                android:layout_height="@dimen/y25"
-                android:gravity="center"
-                android:text="@string/standard"
-                android:checked="true"
-                android:textColor="@color/moduletextcolor_selector"
-                android:background="@drawable/module_way"
-                />
-
-            <RadioButton
-                android:id="@+id/radiobutton4"
-                android:button="@null"
-                android:layout_width="@dimen/x80"
-                android:layout_height="@dimen/y25"
-                android:layout_marginLeft="@dimen/x25"
-                android:gravity="center"
-                android:text="@string/nonStandard"
-                android:textColor="@color/moduletextcolor_selector"
-                android:background="@drawable/module_way"
-                />
-
-        </RadioGroup>
-
-        <EditText
-            android:id="@+id/editText6"
-            android:layout_width="@dimen/x71"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/radiogroup2"
-            android:layout_marginLeft="@dimen/x14"
-            android:layout_marginTop="@dimen/y18"
-            android:hint="@string/pleaseFillin"
-            android:phoneNumber="true"
-            />
-
-        <TextView
-            android:id="@+id/text_unit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/editText6"
-            android:layout_alignBottom="@+id/editText6"
-            android:text="mm"
-            android:textColor="@color/colorparameter1"
-            />
-
-        <RelativeLayout
-            android:id="@+id/line3"
-            android:layout_below="@+id/radiogroup2"
-            android:layout_marginTop="@dimen/y11"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorline"
-            >
-        </RelativeLayout>
-
-
-    </RelativeLayout>
-
-
-
-
-
     <Button
         android:id="@+id/btn_next2"
+        android:layout_below="@+id/line2"
         android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="@dimen/y12"
+        android:layout_marginTop="@dimen/y15"
         android:layout_width="@dimen/x277"
         android:layout_height="@dimen/y25"
         android:text="@string/next"
         android:textSize="@dimen/x14"
-        android:textColor="@color/color_default"
-        android:background="@drawable/next2_btn"/>
-
-
-
+        android:textColor="@color/btn_next_selector"
+        android:background="@drawable/next1_btn"/>
 
 
 </RelativeLayout>

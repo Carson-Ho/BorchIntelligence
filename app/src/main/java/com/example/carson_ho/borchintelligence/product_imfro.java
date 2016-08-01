@@ -48,21 +48,23 @@ public class Product_imfro extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-
-
-
-        System.out.println((String)intent.getStringExtra("product_name"));
-        System.out.println((Integer)intent.getIntExtra("product_price",400));
-
         Product_imfro1 imfor1 = new Product_imfro1();
         Product_imfro2 imfor2 = new Product_imfro2();
 
         Bundle bundle = new Bundle();
 
 
+        System.out.println(intent.getIntExtra("商品照片数量", 400));
+        bundle.putInt("picture_length", (intent.getIntExtra("商品照片数量", 400)));
 
 
-        bundle.putString("name",(String)intent.getStringExtra("product_name"));
+        for(int i =0;i<intent.getIntExtra("商品照片数量", 400);i++){
+            System.out.println("我在商品详情页");
+            System.out.println(intent.getStringExtra("商品照片"+i));
+            bundle.putString("picture"+i,intent.getStringExtra("商品照片"+i));
+        }
+
+        bundle.putString("name", (String)intent.getStringExtra("product_name"));
         bundle.putInt("price", (intent.getIntExtra("product_price",400)));
         bundle.putString("wholse",(String)intent.getStringExtra("product_wholse"));
         bundle.putString("address",(String)intent.getStringExtra("product_address"));

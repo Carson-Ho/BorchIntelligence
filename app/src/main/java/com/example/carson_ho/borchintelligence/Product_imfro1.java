@@ -8,8 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.youth.banner.Banner;
+
+import java.util.ArrayList;
 
 /**
  * Created by Carson_Ho on 16/7/25.
@@ -19,8 +23,8 @@ import com.bumptech.glide.Glide;
 public class Product_imfro1 extends Fragment {
 
     private TextView name, price, wholse, address, picture_url;
-    private ImageView picture;
-
+    private ArrayList<String > images ;
+    private Banner banner;
 
     @Nullable
     @Override
@@ -42,14 +46,12 @@ public class Product_imfro1 extends Fragment {
         price = (TextView)  view.findViewById(R.id.product_price);
         wholse =  (TextView)  view.findViewById(R.id.product_wholesale);
         address = (TextView)  view.findViewById(R.id.product_address);
-        picture = (ImageView)  view.findViewById(R.id.product_picture);
+
 //
 //        System.out.println((String)intent.getStringExtra("price_name"));
 //
 //        name.setText(bundle.getString("name"));
-        System.out.println(bundle.getString("name"));
-        System.out.println((Integer) bundle.getInt("price"));
-        System.out.println(bundle.getString("picture"));
+
 
         name.setText(bundle.getString("name"));
         price.setText(((Integer)bundle.getInt("price")).toString());
@@ -57,9 +59,37 @@ public class Product_imfro1 extends Fragment {
         address.setText(bundle.getString("address"));
 
 
-        Glide.with(this)
-                .load((String) bundle.getString("picture"))
-                .into(picture);
+        banner = (Banner) view.findViewById(R.id.banner);
+        banner.setBannerStyle(Banner.CIRCLE_INDICATOR_TITLE);
+        banner.setIndicatorGravity(Banner.CENTER);
+        banner.isAutoPlay(true);
+        banner.setDelayTime(5000);
+
+
+        images = new ArrayList<>();
+        for(int i = 0 ;i<bundle.getInt("picture_length");i++){
+            System.out.println("我传到Banner了");
+            System.out.println(bundle.getString("picture" + i));
+            images.add(bundle.getString("picture" + i));
+        }
+
+
+        banner.setImages(images, new Banner.OnLoadImageListener() {
+            @Override
+            public void OnLoadImage(ImageView view, Object url) {
+                System.out.println("加载中");
+                Glide.with(getActivity().getApplicationContext()).load(url).into(view);
+                System.out.println("加载完");
+            }
+        });
+
+        banner.setOnBannerClickListener(new Banner.OnBannerClickListener() {//设置点击事件
+            @Override
+            public void OnBannerClick(View view, int position) {
+                Toast.makeText(getActivity().getApplicationContext(), "你点击了：" + position, Toast.LENGTH_LONG).show();
+            }
+        });
+
 
 
 

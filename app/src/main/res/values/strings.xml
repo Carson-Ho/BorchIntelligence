@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">Borch Intelligence</string>
+
+
+    <string name="pleaseChosesproduct">请选择塑料制品参数</string>
+
+    <string name="pleaseChosesmodule">请选择模具参数</string>
+
+    <string name="pleaseChosesothers">其他参数(选填)</string>
+    <string name="area">投影面积(c㎡)</string>
     <string name="machine_List">注塑机列表</string>
 
     <string name="parameter_default1">请选择</string>
@@ -22,8 +30,8 @@
     <string name="pleaseFillin">请填写</string>
     <string name="pleaseChoese">请选择</string>
     <string name="buyGuide">购机向导</string>
-    <string name="pleaseChosesmodule">请选择模具参数</string>
-    <string name="pleaseChosesmachine">请选择注塑机参数</string>
+
+
     <string name="Size">尺寸</string>
     <string name="dingchuWay">顶出方式</string>
     <string name="dingChu">顶出</string>

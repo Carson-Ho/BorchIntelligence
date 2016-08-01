@@ -15,4 +15,12 @@
         <item name="android:textSize">@dimen/x15</item>
         <item name="android:textColor">@color/color_default</item></style>
 
+
+
+
+
+    <style name="MyTabLayoutTextAppearance1"
+        parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">@dimen/x15</item>
+        <item name="android:textColor">@color/colorBackground</item></style>
 </resources>

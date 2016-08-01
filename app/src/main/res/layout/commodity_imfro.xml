@@ -41,7 +41,6 @@
             android:layout_height="@dimen/x25"
 
             android:layout_centerInParent="true"
-
             android:background="@drawable/product_tab_shape"
             app:tabIndicatorHeight="0dp"
             app:tabSelectedTextColor="@color/colorBackground"

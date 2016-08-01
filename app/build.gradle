@@ -20,6 +20,7 @@ android {
 }
 
 dependencies {
+    compile 'com.youth.banner:banner:1.1.5'  //指定版本
     compile 'com.android.support:support-v4:23.4.0'
     compile 'com.android.support:design:23.4.0'
     compile 'com.squareup.picasso:picasso:2.5.2'

@@ -31,17 +31,31 @@ public class CommodityImfor  {
 
 
     static class Data {
+
+        private int machineID;
+
         private String picture;
 
         private int price;
 
         private String address;
 
-        private int express_cost;
+        private int expressCost;
 
         private String name;
 
-        private int lowerest_wholesale;
+        private int lowerestWholesale;
+
+
+
+        public void setMachineID(int machineID) {
+            this.machineID = machineID;
+        }
+
+        public int getMachineID() {
+            return this.machineID;
+        }
+
 
         public void setPicture(String picture) {
             this.picture = picture;
@@ -68,11 +82,11 @@ public class CommodityImfor  {
         }
 
         public void setExpress_cost(int express_cost) {
-            this.express_cost = express_cost;
+            this.expressCost = express_cost;
         }
 
         public int getExpress_cost() {
-            return express_cost;
+            return expressCost;
         }
 
         public void setName(String name) {
@@ -84,11 +98,11 @@ public class CommodityImfor  {
         }
 
         public void setLowerest_wholesale(int lowerest_wholesale) {
-            this.lowerest_wholesale = lowerest_wholesale;
+            this.lowerestWholesale = lowerest_wholesale;
         }
 
         public int getLowerest_wholesale() {
-            return this.lowerest_wholesale;
+            return this.lowerestWholesale;
         }
     }
 

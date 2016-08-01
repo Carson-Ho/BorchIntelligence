@@ -7,21 +7,30 @@
     android:background="@color/layout_default">
 
     <RelativeLayout
-        android:id="@+id/title1"
+        android:id="@+id/top_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/x43"
         android:background="@color/colorBackground"
         >
 
 
-        <Button
-            android:id="@+id/back"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="@dimen/x21"
-            android:layout_width="@dimen/x10"
-            android:layout_height="@dimen/y13"
-            android:background="@drawable/back"
-            />
+        <RelativeLayout
+            android:id="@+id/layout_back"
+            android:layout_alignParentLeft="true"
+            android:layout_width="@dimen/x43"
+            android:layout_height="@dimen/x43"
+            android:background="@drawable/back_btn">
+
+            <Button
+                android:id="@+id/back"
+                android:layout_centerInParent="true"
+                android:layout_width="@dimen/x10"
+                android:layout_height="@dimen/y13"
+                android:background="@drawable/back"
+                android:clickable="false"
+                android:focusable="false"
+                />
+        </RelativeLayout>
 
 
         <TextView
@@ -39,7 +48,7 @@
 
     <ImageView
         android:id="@+id/process1"
-        android:layout_below="@+id/title1"
+        android:layout_below="@+id/top_bar"
         android:layout_marginTop="@dimen/y10"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
@@ -54,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/y10"
         android:layout_centerHorizontal="true"
-        android:text="@string/pleaseChosesmachine"
+        android:text="@string/pleaseChosesothers"
         android:textSize="@dimen/x16"
         android:textColor="@color/colorTab_selected"/>
 
@@ -73,21 +82,54 @@
 
 
     <RelativeLayout
-        android:id="@+id/choese1"
+        android:id="@+id/choese_area"
         android:layout_below="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y31"
+        android:focusable="true"
+        android:background="@drawable/layout_style"
+        android:focusableInTouchMode="true"
+        >
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/area"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter1"/>
+
+        <EditText
+            android:id="@+id/editText_area"
+            android:background="@null"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x116"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/pleaseFillin"
+            android:phoneNumber="true"
+            android:textSize="@dimen/x14"
+            android:textColor="@color/colorparameter2"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/choese1"
+        android:layout_below="@+id/choese_area"
         android:layout_marginTop="@dimen/y11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
         android:focusableInTouchMode="true">
 
-
         <TextView
             android:id="@+id/Size1"
             android:layout_marginLeft="@dimen/x21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/screwType"
+            android:text="@string/dingchuWay"
             android:textSize="@dimen/x14"
             android:textColor="@color/colorparameter1"/>
 
@@ -111,7 +153,8 @@
                 android:layout_height="@dimen/y25"
                 android:gravity="center"
                 android:checked="true"
-                android:text="@string/A_level"
+                android:text="@string/dingChu"
+                android:textSize="@dimen/y10"
                 android:textColor="@color/moduletextcolor_selector"
                 android:background="@drawable/module_way"
                 />
@@ -125,29 +168,14 @@
                 android:layout_height="@dimen/y25"
                 android:layout_marginLeft="@dimen/x25"
                 android:gravity="center"
-                android:text="@string/B_level"
+                android:textSize="@dimen/y10"
+
+                android:text="@string/laShen"
                 android:textColor="@color/moduletextcolor_selector"
                 android:background="@drawable/module_way"
                 />
 
-
-            <RadioButton
-                android:button="@null"
-                android:id="@+id/radiobutton3"
-                android:layout_width="@dimen/x80"
-                android:layout_height="@dimen/y25"
-                android:gravity="center"
-                android:layout_marginTop="@dimen/y31"
-                android:layout_marginLeft="-208dp"
-                android:text="@string/C_level"
-                android:textColor="@color/moduletextcolor_selector"
-                android:background="@drawable/module_way"
-                />
         </RadioGroup>
-
-
-
-
 
         <RelativeLayout
             android:id="@+id/line4"
@@ -179,7 +207,7 @@
             android:layout_marginLeft="@dimen/x21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/motionType"
+            android:text="模具定位环"
             android:textSize="@dimen/x14"
             android:textColor="@color/colorparameter1"/>
 
@@ -198,55 +226,53 @@
 
             <RadioButton
                 android:button="@null"
-                android:id="@+id/radiobutton4"
+                android:id="@+id/radiobutton3"
                 android:layout_width="@dimen/x80"
                 android:layout_height="@dimen/y25"
                 android:gravity="center"
-                android:text="@string/youya"
+                android:text="@string/standard"
                 android:checked="true"
+                android:textSize="@dimen/y10"
                 android:textColor="@color/moduletextcolor_selector"
                 android:background="@drawable/module_way"
                 />
 
             <RadioButton
-                android:id="@+id/radiobutton5"
+                android:id="@+id/radiobutton4"
                 android:button="@null"
                 android:layout_width="@dimen/x80"
                 android:layout_height="@dimen/y25"
                 android:layout_marginLeft="@dimen/x25"
                 android:gravity="center"
-                android:text="@string/yeya"
-                android:textColor="@color/moduletextcolor_selector"
-                android:background="@drawable/module_way"
-                />
-
-            <RadioButton
-                android:id="@+id/radiobutton6"
-                android:button="@null"
-                android:layout_width="@dimen/x80"
-                android:layout_height="@dimen/y25"
-                android:layout_marginTop="@dimen/y31"
-                android:layout_marginLeft="-208dp"
-                android:gravity="center"
-                android:text="@string/quandian"
-                android:textColor="@color/moduletextcolor_selector"
-                android:background="@drawable/module_way"
-                />
-
-            <RadioButton
-                android:id="@+id/radiobutton7"
-                android:button="@null"
-                android:layout_width="@dimen/x80"
-                android:layout_height="@dimen/y25"
-                android:layout_marginTop="@dimen/y31"
-                android:layout_marginLeft="@dimen/x25"
-                android:gravity="center"
-                android:text="@string/youdianhunhe"
+                android:textSize="@dimen/y10"
+                android:text="@string/nonStandard"
                 android:textColor="@color/moduletextcolor_selector"
                 android:background="@drawable/module_way"
                 />
 
         </RadioGroup>
+
+        <EditText
+            android:id="@+id/editText6"
+            android:layout_width="@dimen/x71"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/radiogroup2"
+            android:layout_marginLeft="@dimen/x14"
+            android:layout_marginTop="@dimen/y18"
+            android:textSize="@dimen/y10"
+            android:hint="@string/pleaseFillin"
+            android:phoneNumber="true"
+            />
+
+        <TextView
+            android:id="@+id/text_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/editText6"
+            android:layout_alignBottom="@+id/editText6"
+            android:text="mm"
+            android:textColor="@color/colorparameter1"
+            />
 
         <RelativeLayout
             android:id="@+id/line3"
@@ -271,6 +297,6 @@
         android:layout_height="@dimen/y25"
         android:text="@string/finish"
         android:textSize="@dimen/x14"
-        android:textColor="@color/color_default"
-        android:background="@drawable/next2_btn"/>
+        android:textColor="@color/btn_next_selector"
+        android:background="@drawable/next1_btn"/>
     </RelativeLayout>
